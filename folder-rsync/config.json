@@ -16,6 +16,7 @@
   "map": [ "config", "addons", "backup", "share", "ssl", "media" ],
   "options": {
     "rsyncserver": "server",
+    "rsyncport": 22,
     "rootfolder": "hassio-sync",
     "username": "user",
     "password": "password",
@@ -29,6 +30,7 @@
   },
   "schema": {
     "rsyncserver": "str",
+    "rsyncport": "port",
     "rootfolder": "str",
     "username": "str",
     "password": "password",
