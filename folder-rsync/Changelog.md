@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3
+
+- Add Changelog
+- Allow configuration of rsync port
+
 ## 0.1.2
 
 - Add icon/logo
