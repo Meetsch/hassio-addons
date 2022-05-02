@@ -7,6 +7,8 @@ CONFIG_PATH=/data/options.json
 rsyncserver=$(jq --raw-output ".rsyncserver" $CONFIG_PATH)
 rootfolder=$(jq --raw-output ".rootfolder" $CONFIG_PATH)
 username=$(jq --raw-output ".username" $CONFIG_PATH)
+password=$(jq --raw-output ".password" $CONFIG_PATH)
+
 syncconfig=$(jq --raw-output ".syncconfig" $CONFIG_PATH)
 syncaddons=$(jq --raw-output ".syncaddons" $CONFIG_PATH)
 syncbackup=$(jq --raw-output ".syncbackup" $CONFIG_PATH)
