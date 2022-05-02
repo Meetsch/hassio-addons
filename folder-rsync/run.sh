@@ -19,7 +19,16 @@ rsyncurl="$username@$rsyncserver::$rootfolder"
 echo "[Info] trying to rsync hassio folders to $rsyncurl"
 echo ""
 
-if [ "$syncconfig" == "true" ]  then
+echo "syncconfig: $syncconfig"
+echo "syncaddons: $syncaddons"
+echo "syncbackup: $syncbackup"
+echo "syncshare: $syncshare"
+echo "syncssl: $syncssl"
+echo "syncmedia: $syncmedia"
+
+
+if [ "$syncconfig" == "true" ]
+then
 	echo "[Info] sync /config"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
