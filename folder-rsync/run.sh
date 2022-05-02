@@ -13,26 +13,6 @@ rsyncurl="$username@$rsyncserver::$rootfolder"
 
 echo "[Info] trying to rsync hassio folders to $rsyncurl"
 echo ""
-echo "[Info] /config"
-sshpass -p $password rsync -av --delete --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
-echo ""
-echo "[Info] /addons"
-sshpass -p $password rsync -av --delete /addons/ $rsyncurl/addons/ 
-echo ""
 echo "[Info] /backup"
 sshpass -p $password rsync -av --delete /backup/ $rsyncurl/backup/ 
-echo ""
-echo "[Info] /share"
-sshpass -p $password rsync -av --delete /share/ $rsyncurl/share/ 
-echo ""
-echo "[Info] /ssl"
-sshpass -p $password rsync -av --delete /ssl/ $rsyncurl/ssl/ 
-if [ -d "/media" ]; then
- echo ""
- echo "[Info] /media"
- sshpass -p $password rsync -av --delete /media/ $rsyncurl/media/
-else 
- echo ""
- echo "[Info] /media not existing"
-fi
 echo "[Info] Finished rsync"
