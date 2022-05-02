@@ -1,6 +1,6 @@
 {
   "name": "Folder Rsync",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "slug": "folderrsync",
   "description": "Transfers the Hass.io folders to a remote rsync server.",
   "url" : "https://github.com/LinusHoppe/hassio-addons",
@@ -19,6 +19,7 @@
     "rootfolder": "hassio-sync",
     "username": "user",
     "password": "password",
+    "rsyncoptions": "$rsyncoptions",
     "syncconfig": true,
     "syncaddons": true,
     "syncbackup": true,
@@ -31,6 +32,7 @@
     "rootfolder": "str",
     "username": "str",
     "password": "str",
+    "rsyncoptions": "str",
     "syncconfig": "bool",
     "syncaddons": "bool",
     "syncbackup": "bool",
