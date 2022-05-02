@@ -1,9 +1,8 @@
 # Changelog
 
-## 0.1.3
+## 0.1.3 / 0.1.4
 
 - Add Changelog
-- Allow configuration of rsync port
 
 ## 0.1.2
 
