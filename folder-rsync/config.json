@@ -15,15 +15,27 @@
   ],
   "map": ["config", "addons", "backup", "share", "ssl", "media"],
   "options": {
-	  "rsyncserver": "server",
+    "rsyncserver": "server",
     "rootfolder": "hassio-sync",
     "username": "user",
-    "password": "password"
+    "password": "password",
+    "syncconfig": true,
+    "syncaddons": true,
+    "syncbackup": true,
+    "syncshare": true,
+    "syncssl": true,
+    "syncmedia": true
   },
   "schema": {
-	  "rsyncserver": "str",
+    "rsyncserver": "str",
     "rootfolder": "str",
     "username": "str",
-    "password": "str"
+    "password": "str",
+    "syncconfig": "bool",
+    "syncaddons": "bool",
+    "syncbackup": "bool",
+    "syncshare": "bool",
+    "syncssl": "bool",
+    "syncmedia": "bool"
   }
 }
