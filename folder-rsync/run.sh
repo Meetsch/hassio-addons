@@ -5,6 +5,7 @@ echo "[Info] Starting Hass.io folder rsync docker container!"
 
 CONFIG_PATH=/data/options.json
 rsyncserver=$(jq --raw-output ".rsyncserver" $CONFIG_PATH)
+rsyncport=$(jq --raw-output ".rsyncport" $CONFIG_PATH)
 rootfolder=$(jq --raw-output ".rootfolder" $CONFIG_PATH)
 username=$(jq --raw-output ".username" $CONFIG_PATH)
 password=$(jq --raw-output ".password" $CONFIG_PATH)
@@ -19,42 +20,42 @@ syncmedia=$(jq --raw-output ".syncmedia" $CONFIG_PATH)
 
 rsyncurl="$username@$rsyncserver::$rootfolder"
 
-echo "[Info] trying to rsync hassio folders to $rsyncurl using rsync options $rsyncoptions"
+echo "[Info] trying to rsync hassio folders to $rsyncurl on port $rsyncport using rsync options $rsyncoptions"
 echo ""
 
 if [ "$syncconfig" == "true" ]
 then
 	echo "[Info] sync /config"
 	echo ""
-	sshpass -p $password rsync $rsyncoptions --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
 fi
 
 if [ "$syncaddons" == "true" ]
 then
 	echo "[Info] sync /addons"
 	echo ""
-	sshpass -p $password rsync $rsyncoptions /addons/ $rsyncurl/addons/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /addons/ $rsyncurl/addons/ 
 fi
 
 if [ "$syncbackup" == "true" ]
 then
 	echo "[Info] sync /backup"
 	echo ""
-	sshpass -p $password rsync $rsyncoptions /backup/ $rsyncurl/backup/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /backup/ $rsyncurl/backup/ 
 fi
 
 if [ "$syncshare" == "true" ]
 then
 	echo "[Info] sync /share"
 	echo ""
-	sshpass -p $password rsync $rsyncoptions /share/ $rsyncurl/share/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /share/ $rsyncurl/share/ 
 fi
 
 if [ "$syncssl" == "true" ]
 then
 	echo "[Info] sync /ssl"
 	echo ""
-	sshpass -p $password rsync $rsyncoptions /ssl/ $rsyncurl/ssl/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /ssl/ $rsyncurl/ssl/ 
 fi
 
 if [ "$syncmedia" == "true" ]
@@ -62,7 +63,7 @@ then
 	if [ -d "/media" ]; then
 	 echo ""
 	 echo "[Info] sync /media"
-	 sshpass -p $password rsync $rsyncoptions /media/ $rsyncurl/media/
+	 sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /media/ $rsyncurl/media/
 	else 
 	 echo ""
 	 echo "[Info] /media not existing"
