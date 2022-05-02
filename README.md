@@ -38,13 +38,15 @@ You have to provide the following config parameters:
 
 You might want to start the transfer with a HASS automation
 ```
-- id: '7'
-  alias: Folder sync to NAS
-  trigger:
-    platform: time
-    at: '1:00:00'
-  action:
+alias: Rsync to NAS
+description: ''
+trigger:
+  - platform: time
+    at: '02:00:00'
+condition: []
+action:
   - service: hassio.addon_start
     data:
       addon: 293a5356_folderrsync
+mode: single
 ```
