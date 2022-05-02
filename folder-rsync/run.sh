@@ -36,31 +36,36 @@ then
 	sshpass -p $password rsync --no-perms -rltvh --delete --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
 fi
 
-if [ "$syncaddons" == "true" ]  then
+if [ "$syncaddons" == "true" ]
+then
 	echo "[Info] sync /addons"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /addons/ $rsyncurl/addons/ 
 fi
 
-if [ "$syncbackup" == "true" ]  then
+if [ "$syncbackup" == "true" ]
+then
 	echo "[Info] sync /backup"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /backup/ $rsyncurl/backup/ 
 fi
 
-if [ "$syncshare" == "true" ]  then
+if [ "$syncshare" == "true" ]
+then
 	echo "[Info] sync /share"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /share/ $rsyncurl/share/ 
 fi
 
-if [ "$syncssl" == "true" ]  then
+if [ "$syncssl" == "true" ]
+then
 	echo "[Info] sync /ssl"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /ssl/ $rsyncurl/ssl/ 
 fi
 
-if [ "$syncmedia" == "true" ]  then
+if [ "$syncmedia" == "true" ]
+then
 	if [ -d "/media" ]; then
 	 echo ""
 	 echo "[Info] sync /media"
