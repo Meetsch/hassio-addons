@@ -19,10 +19,8 @@ syncmedia=$(jq --raw-output ".syncmedia" $CONFIG_PATH)
 
 rsyncurl="$username@$rsyncserver::$rootfolder"
 
-echo "[Info] trying to rsync hassio folders to $rsyncurl"
+echo "[Info] trying to rsync hassio folders to $rsyncurl using rsync options $rsyncoptions"
 echo ""
-
-echo "rsyncoptions: $rsyncoptions"
 
 if [ "$syncconfig" == "true" ]
 then
