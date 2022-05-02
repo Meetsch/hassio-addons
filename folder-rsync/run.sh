@@ -13,6 +13,6 @@ rsyncurl="$username@$rsyncserver::$rootfolder"
 
 echo "[Info] trying to rsync hassio folders to $rsyncurl"
 echo ""
-echo "[Info] /backup"
-sshpass -p $password rsync --no-perms -avh --delete /backup/ $rsyncurl/backup/ 
+echo "[Info] /backup without permissions"
+sshpass -p $password rsync --no-perms -rltvh --delete /backup/ $rsyncurl/backup/ 
 echo "[Info] Finished rsync"
