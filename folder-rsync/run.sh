@@ -17,7 +17,7 @@ syncshare=$(jq --raw-output ".syncshare" $CONFIG_PATH)
 syncssl=$(jq --raw-output ".syncssl" $CONFIG_PATH)
 syncmedia=$(jq --raw-output ".syncmedia" $CONFIG_PATH)
 
-rsyncurl="$username@$rsyncserver::$rootfolder"
+rsyncurl="$username@$rsyncserver:$rootfolder"
 
 echo "[Info] trying to rsync hassio folders to $rsyncurl using rsync options $rsyncoptions"
 echo ""
