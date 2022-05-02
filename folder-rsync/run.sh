@@ -27,35 +27,35 @@ if [ "$syncconfig" == "true" ]
 then
 	echo "[Info] sync /config"
 	echo ""
-	sshpass -p $password rsync -e "ssh -p $rsyncport" $rsyncoptions --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
 fi
 
 if [ "$syncaddons" == "true" ]
 then
 	echo "[Info] sync /addons"
 	echo ""
-	sshpass -p $password rsync -e "ssh -p $rsyncport" $rsyncoptions /addons/ $rsyncurl/addons/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /addons/ $rsyncurl/addons/ 
 fi
 
 if [ "$syncbackup" == "true" ]
 then
 	echo "[Info] sync /backup"
 	echo ""
-	sshpass -p $password rsync -e "ssh -p $rsyncport" $rsyncoptions /backup/ $rsyncurl/backup/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /backup/ $rsyncurl/backup/ 
 fi
 
 if [ "$syncshare" == "true" ]
 then
 	echo "[Info] sync /share"
 	echo ""
-	sshpass -p $password rsync -e "ssh -p $rsyncport" $rsyncoptions /share/ $rsyncurl/share/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /share/ $rsyncurl/share/ 
 fi
 
 if [ "$syncssl" == "true" ]
 then
 	echo "[Info] sync /ssl"
 	echo ""
-	sshpass -p $password rsync -e "ssh -p $rsyncport" $rsyncoptions /ssl/ $rsyncurl/ssl/ 
+	sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /ssl/ $rsyncurl/ssl/ 
 fi
 
 if [ "$syncmedia" == "true" ]
@@ -63,7 +63,7 @@ then
 	if [ -d "/media" ]; then
 	 echo ""
 	 echo "[Info] sync /media"
-	 sshpass -p $password rsync -e "ssh -p $rsyncport" $rsyncoptions /media/ $rsyncurl/media/
+	 sshpass -p $password rsync -e "ssh -p $rsyncport -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $rsyncoptions /media/ $rsyncurl/media/
 	else 
 	 echo ""
 	 echo "[Info] /media not existing"
