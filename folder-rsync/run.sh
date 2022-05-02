@@ -19,37 +19,37 @@ rsyncurl="$username@$rsyncserver::$rootfolder"
 echo "[Info] trying to rsync hassio folders to $rsyncurl"
 echo ""
 
-if $syncconfig then
+if [ "$syncconfig" == "true" ]  then
 	echo "[Info] sync /config"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
 fi
 
-if $syncaddons then
+if [ "$syncaddons" == "true" ]  then
 	echo "[Info] sync /addons"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /addons/ $rsyncurl/addons/ 
 fi
 
-if $syncbackup then
+if [ "$syncbackup" == "true" ]  then
 	echo "[Info] sync /backup"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /backup/ $rsyncurl/backup/ 
 fi
 
-if $syncshare then
+if [ "$syncshare" == "true" ]  then
 	echo "[Info] sync /share"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /share/ $rsyncurl/share/ 
 fi
 
-if $syncssl then
+if [ "$syncssl" == "true" ]  then
 	echo "[Info] sync /ssl"
 	echo ""
 	sshpass -p $password rsync --no-perms -rltvh --delete /ssl/ $rsyncurl/ssl/ 
 fi
 
-if $syncmedia then
+if [ "$syncmedia" == "true" ]  then
 	if [ -d "/media" ]; then
 	 echo ""
 	 echo "[Info] sync /media"
