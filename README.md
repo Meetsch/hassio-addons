@@ -23,8 +23,8 @@ You have to provide the following config parameters:
 | option | type | description | example |
 | ------------- | ------------- | ------------- | ------------- | 
 | rsyncserver  | string  | rsync target server  | 192.168.0.1  |
-| rootfolder  | string  | rsync folder, must exist on the target server  | hassio-sync  |
-| username  | string  | rsync target server  | user  |
+| rootfolder  | string  | rsync folder, must exist on the target server  | Backup/hassio  |
+| username  | string  | rsync target server  | hass-rsync  |
 | password  | string  | rsync target server  | password  |
 | rsyncoptions  | string  | options for rsync, please refer to https://wiki.ubuntuusers.de/rsync/ or https://linux.die.net/man/1/rsync for all options  | --no-perms -rltvh --delete  |
 | syncconfig  | boolean  | sync /config  | true  |
@@ -33,6 +33,22 @@ You have to provide the following config parameters:
 | syncshare  | boolean  | sync /share  | true  |
 | syncssl  | boolean  | sync /ssl  | true  |
 | syncmedia  | boolean  | sync /media  | true  |
+
+Example yaml configuration:
+
+```
+rsyncserver: 192.168.0.1
+rootfolder: Backup/hassio
+username: hass-rsync
+password: password
+rsyncoptions: '--no-perms -rltvh --delete'
+syncconfig: true
+syncaddons: true
+syncbackup: true
+syncshare: true
+syncssl: true
+syncmedia: true
+```
 
 ## Automation
 
