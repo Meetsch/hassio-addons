@@ -13,6 +13,7 @@
     "armv7",
     "i386"
   ],
+  "stage":  "stable",
   "map": [ "config", "addons", "backup", "share", "ssl", "media" ],
   "options": {
     "rsyncserver": "server",
