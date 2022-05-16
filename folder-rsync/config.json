@@ -14,7 +14,7 @@
     "i386"
   ],
   "stage":  "stable",
-  "map": [ "config", "addons", "backup", "share", "ssl", "media" ],
+  "map": [ "config:ro", "addons:ro", "backup:ro", "share:ro", "ssl:ro", "media:ro" ],
   "options": {
     "rsyncserver": "server",
     "rootfolder": "hassio-sync",
