@@ -11,7 +11,7 @@ profile folderrsync flags=(attach_disconnected,mediate_deleted) {
   /bin/** ix,
   /usr/bin/** ix,
   /run/{,**} rwk,
-  /run/{s6,s6-rc*,service}/** rix,
+  /run/{s6,s6-rc*,service}/** rwix,
   /run/s6/basedir/scripts/** rwix,
   /package/** rix,
   /command/** ix,
@@ -22,11 +22,5 @@ profile folderrsync flags=(attach_disconnected,mediate_deleted) {
   /dev/tty rw
 
   # Data access
-  /data/** rw,
-  /config/** r,
-  /addons/** r,
-  /backup/** r,
-  /share/** r,
-  /ssl/** r,
-  /media/** r,
+  /data/** rw
 }
