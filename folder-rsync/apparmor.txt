@@ -11,7 +11,7 @@ profile folderrsync flags=(attach_disconnected,mediate_deleted) {
   /bin/** ix,
   /usr/bin/** ix,
   /run/{s6,s6-rc*,service}/** ix,
-  /package/** ix,
+  /package/** rwix,
   /command/** ix,
   /etc/services.d/** rwix,
   /etc/cont-init.d/** rwix,
