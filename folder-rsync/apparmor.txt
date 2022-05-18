@@ -7,7 +7,7 @@ profile folderrsync flags=(attach_disconnected,mediate_deleted) {
   file
 
   # S6-Overlay
-  /init ix,
+  /init rwix,
   /bin/** ix,
   /usr/bin/** ix,
   /run/{s6,s6-rc*,service}/** ix,
