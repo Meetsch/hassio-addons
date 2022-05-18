@@ -10,15 +10,16 @@ profile folderrsync flags=(attach_disconnected,mediate_deleted) {
   /init rwix,
   /bin/** ix,
   /usr/bin/** ix,
-  /run/{s6,s6-rc*,service}/** ix,
-  /package/** rwix,
+  /run/{,**} rwk,
+  /run/{s6,s6-rc*,service}/** rix,
+  /run/s6/basedir/scripts/ rwix,
+  /package/** rix,
   /command/** ix,
   /etc/services.d/** rwix,
   /etc/cont-init.d/** rwix,
   /etc/cont-finish.d/** rwix,
-  /etc/s6-overlay/** rwix,
-  /run/{,**} rwk,
-  /dev/tty rw,
+  /etc/s6-overlay/** rix,
+  /dev/tty rw
 
   # Data access
   /data/** rw,
