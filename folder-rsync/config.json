@@ -1,6 +1,6 @@
 {
   "name": "Folder Rsync",
-  "version": "0.2.15",
+  "version": "0.3.0",
   "slug": "folderrsync",
   "description": "Transfers the Hass.io folders to a remote rsync server.",
   "url": "https://github.com/LinusHoppe/hassio-addons",
@@ -46,6 +46,5 @@
   "docker_api": false,
   "host_pid": false,
   "hassio_role": "default",
-  "host_network": false,
-  "apparmor": true
+  "host_network": false
 }
