@@ -11,6 +11,10 @@ declare postoverflows
 declare parsers_to_disable
 declare scenarios_to_disable
 declare disable_online_api
+declare disable_local_api
+declare agent_username
+declare agent_password
+declare local_api_url
 
 # Get all arguments
 acquisition=$(bashio::config 'acquisition')
@@ -133,12 +137,14 @@ fi
 LOCAL_API_URL=""
 AGENT_USERNAME=""
 AGENT_PASSWORD=""
+bashio::log.info "Checking remote agent details"
 if [[ ! -z "${local_api_url}" ]]; then
     if [[ ! -z "${agent_username}" ]]; then
         if [[ ! -z "${agent_password}" ]]; then
             export LOCAL_API_URL="${local_api_url}"
             export AGENT_USERNAME="${agent_username}"
             export AGENT_PASSWORD="${agent_password}"
+            bashio::log.info "Got username ${agent_username for API ${local_api_url}"
             cscli -c /config/.storage/crowdsec/config/config.yaml machines delete localhost
             cscli -c /config/.storage/crowdsec/config/config.yaml machines add localhost --auto --url "${local_api_url}"
             echo "url: ${local_api_url}" > /config/.storage/crowdsec/config/local_api_credentials.yaml
