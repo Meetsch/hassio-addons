@@ -49,7 +49,7 @@ schema:
   disable_online_api: bool
   disable_local_api: bool
   agent_username: str
-  agent_password: str
+  agent_password: password
   local_api_url: str
 map:
   - config:rw
