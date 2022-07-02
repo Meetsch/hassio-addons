@@ -48,12 +48,9 @@ schema:
     - str
   disable_online_api: bool
   disable_local_api: bool
-  agent_username:
-    - str
-  agent_password:
-    - str
-  local_api_url:
-    - str
+  agent_username: str
+  agent_password: str
+  local_api_url: str
 map:
   - config:rw
 panel_icon: mdi:console-network
