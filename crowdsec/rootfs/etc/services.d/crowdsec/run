@@ -131,30 +131,26 @@ fi
 
 DISABLE_LOCAL_API=""
 if bashio::var.true "${disable_local_api}"; then
+    bashio::log.info "Local API will be disabled"
     export DISABLE_LOCAL_API="true"
 fi
 
 LOCAL_API_URL=""
-AGENT_USERNAME=""
-AGENT_PASSWORD=""
-bashio::log.info "Checking remote agent details"
 if [[ ! -z "${local_api_url}" ]]; then
-    if [[ ! -z "${agent_username}" ]]; then
-        if [[ ! -z "${agent_password}" ]]; then
-            export LOCAL_API_URL="${local_api_url}"
-            export AGENT_USERNAME="${agent_username}"
-            export AGENT_PASSWORD="${agent_password}"
-            bashio::log.info "Got username ${agent_username for API ${local_api_url}"
-            cscli -c /config/.storage/crowdsec/config/config.yaml machines delete localhost
-            cscli -c /config/.storage/crowdsec/config/config.yaml machines add localhost --auto --url "${local_api_url}"
-            echo "url: ${local_api_url}" > /config/.storage/crowdsec/config/local_api_credentials.yaml
-            echo "login: ${agent_username}" >> /config/.storage/crowdsec/config/local_api_credentials.yaml
-            echo "password: ${agent_password}" >> /config/.storage/crowdsec/config/local_api_credentials.yaml
-        fi
-    fi
+    bashio::log.info "Local API URL will be set to ${local_api_url}"
+    export LOCAL_API_URL="${local_api_url}"
 fi
 
+AGENT_USERNAME=""
+if [[ ! -z "${agent_username}" ]]; then
+    bashio::log.info "Found agent username ${agent_username}"
+    export AGENT_USERNAME="${agent_username}"
+fi
 
-
+AGENT_PASSWORD=""
+if [[ ! -z "${agent_password}" ]]; then
+    bashio::log.info "Found agent password"
+    export AGENT_PASSWORD="${agent_password}"
+fi
 
 exec bash /docker_start.sh
