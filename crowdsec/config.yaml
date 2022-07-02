@@ -34,7 +34,7 @@ environment:
   CONFIG_FILE: "/config/.storage/crowdsec/config/config.yaml"
   DISABLE_LOCAL_API: "true"
   AGENT_USERNAME: "HomeAssistant"
-  AGENT_PASSWORD: "fYR43QAiqQ3BSU0rbe2nvHoKjXp01H8SRR0FXHLQgqgjiOvqXleLURY1S1Kwz6Bc"
+  AGENT_PASSWORD: "dzaYAiA2esNM3hvf7ljlQ764C0mJYufwCPrUW1601UnnA7CqB24Y8aqFi2XWszAe"
   LOCAL_API_URL: "http://192.168.0.4:8080"
 schema:
   acquisition: str
