@@ -4,7 +4,9 @@
 
 This repository is forked from https://github.com/carstenschroeder/hassio-addons, and uses contributions from forks https://github.com/LinusHoppe/hassio-addons/ and https://github.com/thywolf/hassio-addons.
 
-This simple addon transfers the Hass.io folders /addons, /backup, /config, /share, /ssl and /media to a remote rsync server (e.g. a Synology NAS). The addon transfers the changes to the destination at every start. After the transfer it stops.
+This simple addon transfers the Hass.io folders /homeassistant, /add_configs, /backup, /share, /ssl and /media to a remote rsync server (e.g. a Synology NAS).
+
+The addon transfers the changes to the destination at every start. After the transfer it stops.
 
 ## Installation
 
