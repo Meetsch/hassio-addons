@@ -24,16 +24,16 @@ echo ""
 
 if [ "$syncconfig" == "true" ]
 then
-	echo "[Info] sync /config"
+	echo "[Info] sync /homeassistant"
 	echo ""
-	sshpass -p $password rsync $rsyncoptions --exclude '*.db-shm' --exclude '*.db-wal' /config/ $rsyncurl/config/ 
+	sshpass -p $password rsync $rsyncoptions --exclude '*.db-shm' --exclude '*.db-wal' /homeassistant/ $rsyncurl/homeassistant/ 
 fi
 
 if [ "$syncaddons" == "true" ]
 then
-	echo "[Info] sync /addons"
+	echo "[Info] sync /addon_configs"
 	echo ""
-	sshpass -p $password rsync $rsyncoptions /addons/ $rsyncurl/addons/ 
+	sshpass -p $password rsync $rsyncoptions /addon_configs/ $rsyncurl/addon_configs/ 
 fi
 
 if [ "$syncbackup" == "true" ]
