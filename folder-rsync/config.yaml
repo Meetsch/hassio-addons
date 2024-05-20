@@ -1,0 +1,56 @@
+name: "Folder Rsync"
+version: "0.4.0"
+slug: "hassio-folderrsync"
+description: "Transfers the Hass.io folders to a remote rsync server."
+url: "https://github.com/Meetsch/hassio-addons"
+startup: once
+boot: manual
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+stage: stable
+
+map: 
+  - homeassistant_config
+  - all_addon_configs
+  - backup
+  - share
+  - ssl
+  - media
+  
+options:
+  rsyncserver: "server"
+  rootfolder: "hassio-sync"
+  username: "user"
+  password: "password"
+  rsyncoptions: "--no-perms -rltvh --delete"
+  syncconfig: true
+  syncaddons: true
+  syncbackup: true
+  syncshare: true
+  syncssl: true
+  syncmedia: true
+  
+schema:
+  rsyncserver: str
+  rootfolder: str
+  username: str
+  password: password
+  rsyncoptions: str
+  syncconfig: bool
+  syncaddons: bool
+  syncbackup: bool
+  syncshare: bool
+  syncssl: bool
+  syncmedia: bool
+
+full_access: false
+docker_api: false
+host_pid: false
+hassio_role: default
+host_network: false
+
