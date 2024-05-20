@@ -10,6 +10,18 @@ website of Home Assistant, and use the following URL:
 https://github.com/Meetsch/hassio-addons/
 ```
 
+### Install Troubleshooting
+
+when usin Home Assistant Supervisor install can fail because of missing internet connection for the supervisor.
+
+To fix the issues you must use a static IP address and use public DNS:
+
+Settings > Hardware > Network
+
+* Static IP (not DHCP)
+
+* DNS: ```8.8.8.8, 8.8.4.4, 1.1.1.1, 1.0.0.1```
+
 ## Configuration
 
 You have to provide the following config parameters:
