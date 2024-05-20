@@ -1,5 +1,5 @@
 name: "Folder Rsync"
-version: "0.4.1"
+version: "0.4.2"
 slug: "hassio-folderrsync"
 description: "Transfers the Hass.io folders to a remote rsync server."
 url: "https://github.com/Meetsch/hassio-addons"
