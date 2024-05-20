@@ -2,7 +2,7 @@
 
 ## 0.3.3
 
-- update to use new HA folder names: '''homeassistant''' (formerly '''config''') and '''addon_configs''' (formerly '''addons''')
+- update to use new HA folder names: ```homeassistant``` (formerly ```config```) and ```addon_configs``` (formerly ```addons```)
 
 ## 0.1.2
 
