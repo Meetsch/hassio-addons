@@ -57,6 +57,6 @@ condition: []
 action:
   - service: hassio.addon_start
     data:
-      addon: 293a5356_hassio-folderrsync
+      addon: 66be7df6-hassio-folderrsync
 mode: single
 ```
