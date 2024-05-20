@@ -6,7 +6,8 @@ ENV LANG C.UTF-8
 # Install requirements for add-on
 RUN \
   apk add --no-cache \
-#   jq sshpass \
+#   jq \
+    sshpass \
     rsync
 
 # Copy data for add-on

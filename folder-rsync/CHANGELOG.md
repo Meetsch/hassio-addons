@@ -1,8 +1,12 @@
 # Changelog
 
-## 0.3.3
+## 0.4.3
 
 - update to use new HA folder names: ```homeassistant``` (formerly ```config```) and ```addon_configs``` (formerly ```addons```)
+
+- added Info, Documentation and configuration descriptions.
+
+- updated logo to use official rsync logo
 
 ## 0.1.2
 

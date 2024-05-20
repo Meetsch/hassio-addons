@@ -16,10 +16,10 @@ You have to provide the following config parameters:
 
 | option | type | description | example |
 | ------------- | ------------- | ------------- | ------------- | 
-| rsyncserver  | string  | rsync target server  | 192.168.0.1  |
+| rsyncserver  | string  | rsync target server address  | 192.168.0.1  |
 | rootfolder  | string  | rsync folder, must exist on the target server  | Backup/hassio  |
-| username  | string  | rsync target server  | hass-rsync  |
-| password  | string  | rsync target server  | password  |
+| username  | string  | rsync target server login  | hass-rsync  |
+| password  | string  | rsync target server login password  | password  |
 | rsyncoptions  | string  | options for rsync, please refer to https://wiki.ubuntuusers.de/rsync/ or https://linux.die.net/man/1/rsync for all options  | --no-perms -rltvh --delete  |
 | syncconfig  | boolean  | sync /homeassistant  | true  |
 | syncaddons  | boolean  | sync /addon_configs  | true  |
