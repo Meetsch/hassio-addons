@@ -1,34 +1,34 @@
 configuration:
   rsyncserver:
-    name: RSync server address
-    description: RSync server's address (IP or name). E.g: 192.168.0.1
+    name: "RSync server address"
+    description: "RSync server's address (IP or name). E.g: 192.168.0.1"
   rootfolder:
-    name: RSync server's folder
-    description: RSync server's folder for synchronization, must exist on the target server. E.g: Backup/hassio
+    name: "RSync server's folder"
+    description: "RSync server's folder for synchronization, must exist on the target server. E.g: Backup/hassio"
   username:
-    name: RSync server login username
-    description: Username to connect to the RSync server.
+    name: "Username"
+    description: "Username to connect to the RSync server."
   password:
-    name: RSync server login password
-    description: Password to connect to the RSync server.
+    name: "Password"
+    description: "Password to connect to the RSync server."
   rsyncoptions:
-    name: rsync arguments
-    description: rsync argumentat to use for synchronization. E.g: --no-perms -rltvh --delete
+    name: "rsync arguments"
+    description: "rsync copmmand arguments to use for synchronization. E.g: --no-perms -rltvh --delete"
   syncconfig:
-    name: Sync config
-    description: Synchronize /homeassistant folder.
+    name: "Sync config"
+    description: "Synchronize /homeassistant folder."
   syncaddons:
-    name: Sync add-ons config
-    description: Synchronize /addon_configs folder.
+    name: "Sync add-ons config"
+    description: "Synchronize /addon_configs folder."
   syncbackup:
-    name: Sync backup
-    description: Synchronize /backup folder.
+    name: "Sync backup"
+    description: "Synchronize /backup folder."
   syncshare:
-    name: Sync share
-    description: Synchronize /share folder.
+    name: "Sync share"
+    description: "Synchronize /share folder."
   syncssl:
-    name: Sync ssl
-    description: Synchronize /ssl folder.
+    name: "Sync ssl"
+    description: "Synchronize /ssl folder."
   syncmedia:
-    name: Sync media
-    description: Synchronize /media folder.
+    name: "Sync media"
+    description: "Synchronize /media folder."
