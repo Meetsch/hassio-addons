@@ -29,8 +29,8 @@ You have to provide the following config parameters:
 | username  | string  | rsync target server  | hass-rsync  |
 | password  | string  | rsync target server  | password  |
 | rsyncoptions  | string  | options for rsync, please refer to https://wiki.ubuntuusers.de/rsync/ or https://linux.die.net/man/1/rsync for all options  | --no-perms -rltvh --delete  |
-| syncconfig  | boolean  | sync /config  | true  |
-| syncaddons  | boolean  | sync /addons  | true  |
+| syncconfig  | boolean  | sync /homeassistant  | true  |
+| syncaddons  | boolean  | sync /add_configs  | true  |
 | syncbackup  | boolean  | sync /backup  | true  |
 | syncshare  | boolean  | sync /share  | true  |
 | syncssl  | boolean  | sync /ssl  | true  |
