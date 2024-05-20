@@ -12,7 +12,7 @@ https://github.com/Meetsch/hassio-addons/
 
 ### Install Troubleshooting
 
-when usin Home Assistant Supervisor install can fail because of missing internet connection for the supervisor.
+When using Home Assistant Supervisor install can fail because of missing internet connection for the supervisor.
 
 To fix the issues you must use a static IP address and use public DNS:
 
