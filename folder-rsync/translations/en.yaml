@@ -1,34 +1,34 @@
 configuration:
-  rsyncserver:
+  - rsyncserver:
     name: "RSync server address"
     description: "RSync server's address (IP or name). E.g: 192.168.0.1"
-  rootfolder:
+  - rootfolder:
     name: "RSync server's folder"
     description: "RSync server's folder for synchronization, must exist on the target server. E.g: Backup/hassio"
-  username:
+  - username:
     name: "Username"
     description: "Username to connect to the RSync server."
-  password:
+  - password:
     name: "Password"
     description: "Password to connect to the RSync server."
-  rsyncoptions:
+  - rsyncoptions:
     name: "rsync arguments"
     description: "rsync copmmand arguments to use for synchronization. E.g: --no-perms -rltvh --delete"
-  syncconfig:
+  - syncconfig:
     name: "Sync config"
     description: "Synchronize /homeassistant folder."
-  syncaddons:
+  - syncaddons:
     name: "Sync add-ons config"
     description: "Synchronize /addon_configs folder."
-  syncbackup:
+  - syncbackup:
     name: "Sync backup"
     description: "Synchronize /backup folder."
-  syncshare:
+  - syncshare:
     name: "Sync share"
     description: "Synchronize /share folder."
-  syncssl:
+  - syncssl:
     name: "Sync ssl"
     description: "Synchronize /ssl folder."
-  syncmedia:
+  - syncmedia:
     name: "Sync media"
     description: "Synchronize /media folder."
